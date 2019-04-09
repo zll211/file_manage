@@ -1,0 +1,165 @@
+@import '../../style/variables';
+
+.fill-contain {
+  height: 100%;
+  width: 100%;
+}
+
+.el-header {
+  width: 100%;
+  height: 68px !important;
+  background: #FFFFFF;
+}
+
+.el-main {
+  background-color: $_pm-default-background;
+  padding: 0;
+  flex-basis: 0 !important;
+  .slice-main {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .slice-body {
+      background: $_pm-default-background;
+      margin-top: 19px;
+      flex: 1;
+      .slice-tree {
+        /*flex: 3;*/
+        .show-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #4F93FE;
+          position: absolute;
+          top: 50%;
+          right: -14px;
+          width: 14px;
+          height: 84px;
+          margin-top: -42px;
+          margin-left: -20px;
+          cursor: pointer;
+          z-index: 2;
+          &:before {
+            color: #ffffff;
+          }
+        }
+        .tree-page {
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          background-color: #fff;
+          padding: 28px;
+          .filter-text {
+            width: 300px;
+            margin: 0 0 10px 0;
+          }
+          .tree-title {
+            text-align: center;
+          }
+        }
+        .filter-tree {
+          background-color: #fff;
+          color: $_pm-default-color;
+          font-size: 14px;
+          .el-tree-node__content {
+            height: 46px;
+          }
+          .custom-tree-node {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            padding-right: 8px;
+          }
+        }
+      }
+      .slice-table {
+        flex: 7;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        .el-table {
+          height: calc(100% - 50px) !important;
+          .pathology-id {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .entry-main{
+    @extend .slice-main;
+  }
+}
+
+.main-container {
+  padding: 30px 34px;
+  min-width: 1000px;
+  overflow-x: auto;
+  .common-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 74px;
+    padding: 0 25px;
+    background: #FFFFFF;
+    .el-input{
+      max-width: 182px;
+    }
+  }
+  .common-table {
+    margin: 19px 0 0;
+    padding: 25px;
+    background: #FFFFFF;
+    .common-table-header{
+      .el-tabs__header {
+        margin: 0;
+      }
+      .el-tabs__item {
+        color: $_pm-default-light-color;
+        &:hover {
+          color: $_pm-base-color;
+        }
+        &.is-active {
+          color: $_pm-base-color;
+        }
+      }
+      .el-tabs__active-bar {
+        &.is-top{
+          height: 2px !important;
+        }
+      }
+      .el-tabs__nav-wrap {
+        &::after {
+          height: 0;
+        }
+      }
+    }
+    .el-table {
+      thead tr th {
+        height: 48px;
+        color: $_pm-default-color;
+        background: $_pm-table-header-color;
+      }
+      td, th {
+        padding: 0;
+        height: 48px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    padding: 30px 2px;
+    min-width: 900px;
+  }
+}
+
+
